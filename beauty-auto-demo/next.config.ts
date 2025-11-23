@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // サイトのルート "/" へのアクセスを "/analyze" に恒久的にリダイレクトする
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/analyze',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
